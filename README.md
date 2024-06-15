@@ -5,5 +5,5 @@ Instructions:
 2) In the static folder add the css and js file for css js elements to work on webpage. Get it from here: https://materializecss.com/getting-started.html
 
 # Quick start
-## Run the pretraining.py to pre-train the model
-## Run the appGPS.py to load the model and open the web interface
+1) Run the pretraining.py to pre-train the model
+2) Run the appGPS.py to load the model and open the web interface
