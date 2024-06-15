@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo"><img src="./static/CNU_logo.png" alt="Logo Image" style="height: 65px; margin-left: -320px;">
+    </a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#"style="font-size: 22px; margin-right: -400px;">About Us</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text" style="margin-top: -20px;" >Fake GPS Prediction</h1>
+      <div class="row center">
+        <h5 class="header col s12 light" style="margin-top: -10px;">Predict the probability of Fake GPS</h5>
+      </div>
+
+      <div class="row">
+        <form action='/predict' method="POST" class="col s12">
+          <div class="row center">
+            <label for="order_id" style="font-size: 22px;"><b>Order ID</b></label>
+            <br>
+            <input id="order_id" name="order_id" type="text" class="validate">
+          </div>
+
+          <div class="row center">
+            <button type="submit" class="btn-large waves-effect waves-light orange" style="margin-top: -5px; font-size: 22px;">Predict Probability</button>
+          </div>
+        </form>
+      </div>
+
+      <br><h4 align="center" style="margin-top: -30px;"><b>{{ pred }}</b></h4>
+      <br>
+    </div>
+  </div>
+  <div class="container">
+  <div class="section">
+    <div class="row">
+      <div class="col s12 m12">
+        <div class="row center" style="margin-top: -10px;">
+          <iframe src="{{ url_for('static', filename='map.html') }}" width="150%" height="800" style="margin-left: -25%; margin-right: -25%;"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12" style="margin-top: -40px;">
+        <p class="caption center-align"><img src="./static/red.png" alt="Red Circle" style="height: 18px;">
+            <span style="font-size: 20px;">:&nbspUNAVAILABLE;</span> 
+            &nbsp;&nbsp;&nbsp;&nbsp;<img src="./static/green.png" alt="Red Circle" style="height: 18px;">
+            <span style="font-size: 20px;">:&nbspAVAILABLE;</span> 
+            &nbsp;&nbsp;&nbsp;&nbsp;<img src="./static/black.png" alt="Red Circle" style="height: 18px;">
+           <span style="font-size: 20px;">:&nbspOTW_PICKUP;</span> 
+            &nbsp;&nbsp;&nbsp;&nbsp;<img src="./static/blue.png" alt="Red Circle" style="height: 18px;">
+            <span style="font-size: 20px;">:&nbspOTW_DROPOFF</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <footer class="page-footer orange" style="margin-top: -25px;">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text" style="margin-left: -25%; margin-right: -25%:">Smart Computing Laboratory</h5>
+          <p class="grey-text text-lighten-4" style="margin-left: -25%; margin-right: -25%:">Engineering Building 7th, Rm. 905 Chonnam National University 77 Yongbong-ro, Buk-gu, Gwangju (Yongbong-dong) South Korea.</p>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text" style="padding-left: 200px;" >Link</h5>
+          <ul style="padding-left: 200px;">
+            <li><a class="white-text" href="#!">http://sclab.jnu.ac.kr/</a></li>
+            <li><a class="white-text" href="#!" >https://www.youtube.com/channel/UC79zfFlo5U8vo7alYvypGIA/featured</a></li>
+
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">YISHAN JIANG 238045</a>
+      </div>
+    </div>
+  </footer>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="./static/js/materialize.js"></script>
+  <script src="./static/js/init.js"></script>
+</body>
+</html>
